@@ -5,7 +5,7 @@ type FooterProps = {
 };
 
 const Footer: React.FC<unknown> = () => {
-  return <div>Footer</div>;
+  return <footer>Made with love by Álvaro Arias Rivero</footer>;
 };
 
 export default Footer;
