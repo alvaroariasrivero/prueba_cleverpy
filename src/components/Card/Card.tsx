@@ -1,15 +1,17 @@
 import * as React from "react";
 
 export type CardProps = {
-  post: {body:string, title: string, id: number, user: number}
+  post: {body:string, title: string, id: number, user: number},
+  delete: (event: React.MouseEvent<HTMLButtonElement>) => void
 };
 
-const Card: React.FC<CardProps> = (post) => {
+const Card: React.FC<CardProps> = (Props: CardProps) => {
   return <div className="card">
-    <p>Title: {post.post.title}</p>
-    <p>Author: {post.post.user}</p>
-    <p>{post.post.body}</p>
-    <p>{post.post.id}</p>
+    <h3>Title: {Props.post.title}</h3>
+    <h4>Author: {Props.post.user}</h4>
+    <p>{Props.post.body}</p>
+    <p>{Props.post.id}</p>
+    <button onClick={Props.delete}>Delete Post</button>
   </div>;
 };
 

@@ -4,7 +4,7 @@ type PostProps = {
   //
 };
 
-const Post: React.FC<unknown> = () => {
+const Post: React.FC<PostProps> = () => {
   return <div>Post</div>;
 };
 

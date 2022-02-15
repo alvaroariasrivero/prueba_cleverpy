@@ -39,10 +39,13 @@ const Home: React.FC<HomeProps> = () => {
     fetchPost();
   }, [])
 
-  console.log('Esto es posts', posts)
+  const deletePost = (i: number) => {
+    const cleanedPosts = posts.filter((post,j)=>j!==i)
+    setPosts(cleanedPosts);
+  }
 
   const paintCards = () => {
-    return posts.map((post, i) => /*console.log('Esto trae el map', post)*/<Card key={i} post={post}/>)
+    return posts.map((post, i) => /*console.log('Esto trae el map', post)*/<Card key={i} post={post} delete={()=>deletePost(i)}/>)
   }
   
   return <div>{paintCards()}</div>;
