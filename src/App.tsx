@@ -8,10 +8,12 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 interface AppContextInterface {
-  user: string;
-  login: (userName: string) => void
-  logout: () => void
-  setUser: (value: string) => void;
+  user: string,
+  login: (userName: string) => void,
+  logout: () => void,
+  setUser: (value: string) => void,
+  logged: boolean,
+  setLogged: (logged: boolean) => void
 }
 
 export const userContext = React.createContext<AppContextInterface | null>(null);
@@ -19,6 +21,7 @@ export const userContext = React.createContext<AppContextInterface | null>(null)
 function App() {
 
   const[user, setUser] = useState('')
+  const[logged, setLogged] = useState(false)
 
   const login = (userName: string) => {
     setUser(userName);
@@ -26,13 +29,16 @@ function App() {
 
   const logout = () => {
     setUser('');
+    setLogged(false)
   }
 
   const userObj: AppContextInterface = {
     user,
     login,
     logout,
-    setUser
+    setUser,
+    logged,
+    setLogged
   }
 
   return (

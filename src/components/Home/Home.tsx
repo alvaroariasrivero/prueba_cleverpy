@@ -46,9 +46,9 @@ const Home: React.FC<HomeProps> = () => {
     if(appContext?.user){
     const cleanedPosts = posts.filter((post,j)=>j!==i)
     setPosts(cleanedPosts)
-    };
+    }
   }
-
+  
   const paintCards = () => {
     return posts.map((post, i) => <Card key={i} post={post} delete={()=>deletePost(i)}/>)
   }

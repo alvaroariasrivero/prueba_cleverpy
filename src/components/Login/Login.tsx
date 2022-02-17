@@ -11,6 +11,8 @@ const Login: React.FC<LoginProps> = () => {
   
   const appContext = React.useContext(userContext);
 
+  const[credentials, setCredentiasl] = React.useState('');
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const logedPassword: string = event.currentTarget.password.value;
@@ -20,6 +22,9 @@ const Login: React.FC<LoginProps> = () => {
     if(logedPassword === password && logedUser.toLowerCase() === username.toLowerCase()){
       appContext?.setUser(logedUser);
       appContext?.login(logedUser);
+      appContext?.setLogged(true);
+      } else {
+        setCredentiasl('Incorrect username or password')
       }
   }
 
@@ -37,6 +42,7 @@ const Login: React.FC<LoginProps> = () => {
             <input type="password" name="password" required/>
           </div>  
           <input type="submit" value='Login'/>  
+          <p className="incorrect">{credentials}</p>
           <div ><Link to='/signup' className="signup">Sign up</Link></div>
          </form>;
 };
