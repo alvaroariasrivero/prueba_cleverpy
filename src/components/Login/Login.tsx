@@ -13,7 +13,7 @@ const Login: React.FC<LoginProps> = () => {
           </div>
           <div>
             <label htmlFor="pass">Password: </label>
-            <input type="text" name="password"/>
+            <input type="password" name="password"/>
           </div>  
           <input type="submit" value='Search'/>  
          </form>;

@@ -33,3 +33,10 @@ label{
     padding: 0.063rem;
     width: 50%;
 }
+
+@media only screen and (max-width: 426px){
+
+    form > div{
+        width: 80%;
+    }
+}
