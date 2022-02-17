@@ -43,6 +43,10 @@ a.signup:link, a.signup:visited, a.signup:active {
     color: $color;
 }
 
+.incorrect{
+    color: red;
+}
+
 @media only screen and (max-width: 426px){
 
     form > div{
