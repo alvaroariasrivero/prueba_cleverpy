@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
 import axios from 'axios';
 import Card from '../Card';
+import './Home.scss';
 
 type HomeProps = {
 
@@ -12,7 +13,6 @@ interface Data{
   id: number,
   userId: number
 }
-
 
 const Home: React.FC<HomeProps> = () => {
 
@@ -45,10 +45,20 @@ const Home: React.FC<HomeProps> = () => {
   }
 
   const paintCards = () => {
-    return posts.map((post, i) => /*console.log('Esto trae el map', post)*/<Card key={i} post={post} delete={()=>deletePost(i)}/>)
+    return posts.map((post, i) => <Card key={i} post={post} delete={()=>deletePost(i)}/>)
   }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
   
-  return <div>{paintCards()}</div>;
+  return <>
+          <div className="card-container">{paintCards()}</div>
+          <button onClick={scrollToTop} className="back-to-top">&#129145;</button>
+        </>;
 };
 
 export default Home;

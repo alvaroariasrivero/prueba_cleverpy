@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: $spacing-sm auto;
+}
+
+.back-to-top{
+    border-radius: 100%;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #D4C9F5;
+    background-color: $bg-card;
+    position: fixed;
+    bottom: 1.5rem;
+    right: $spacing-sm;
+}

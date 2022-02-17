@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+h3{
+    margin: 0.5rem auto;
+}
+
+h4{
+    margin: 0.5rem auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: inherit;
+    background-color: $bg-card;
+    width: 16rem;
+    padding: 2.1rem;
+    margin: $spacing-md;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px #DECCCA;
+}
+
+.card-txt{
+    text-align: justify;
+}
+
+.delete-btn{
+    width: 6.4rem;
+    margin: $spacing-sm auto;
+    color: $title-color;
+    background-color: $bg-menu;
+    background: $bg-gradient;
+    border-radius: 5px;
+    border: none;
+    padding: $spacing-sm 0;
+    cursor: pointer;
+}

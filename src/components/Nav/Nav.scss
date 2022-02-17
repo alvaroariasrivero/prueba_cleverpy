@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+
+nav{
+    width: 100%;
+    font-family: $plaster-font;
+    color: $title-color;
+    font-size: 2.5rem;
+    margin: $spacing-sm;
+
+}
+
+ul{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li{
+    list-style: none;
+}
