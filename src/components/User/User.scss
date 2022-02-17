@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.logout-btn{
+    width: 6.4rem;
+    margin: $spacing-sm auto;
+    color: $title-color;
+    background-color: $bg-menu;
+    background: $bg-gradient;
+    border-radius: 5px;
+    border: none;
+    padding: $spacing-sm 0;
+    cursor: pointer;
+}

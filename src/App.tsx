@@ -1,10 +1,20 @@
+import * as React from "react";
 import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import {userContext} from './context/userContext';
 import './App.css';
 import Main from './components/Main';
+import User from './components/User';
 import Header from './components/Header';
 import Footer from './components/Footer';
+
+interface AppContextInterface {
+  user: string;
+  login: (userName: string) => void
+  logout: () => void
+  setUser: (value: string) => void;
+}
+
+export const userContext = React.createContext<AppContextInterface | null>(null);
 
 function App() {
 
@@ -18,7 +28,7 @@ function App() {
     setUser('');
   }
 
-  const userObj = {
+  const userObj: AppContextInterface = {
     user,
     login,
     logout,
@@ -30,6 +40,7 @@ function App() {
       <BrowserRouter>
       <userContext.Provider value={userObj}>
         <Header/>
+        <User/>
         <Main/>
         <Footer/>
       </userContext.Provider>  
