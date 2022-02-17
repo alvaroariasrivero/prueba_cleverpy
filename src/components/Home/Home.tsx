@@ -1,5 +1,7 @@
-import { useEffect, useState} from 'react';
+// import { useEffect, useState} from 'react';
+import * as React from "react";
 import axios from 'axios';
+import {userContext} from '../../App';
 import Card from '../Card';
 import './Home.scss';
 
@@ -16,9 +18,9 @@ interface Data{
 
 const Home: React.FC<HomeProps> = () => {
 
-  const[posts, setPosts] = useState([])
+  const[posts, setPosts] = React.useState([])
 
-  useEffect(() => {
+  React.useEffect(() => {
     async function fetchPost() {
       try {
         const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
