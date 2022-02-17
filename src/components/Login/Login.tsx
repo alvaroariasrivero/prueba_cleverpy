@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import {userContext} from '../../App';
 import './Login.scss';
 
@@ -13,11 +13,13 @@ const Login: React.FC<LoginProps> = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const password: string = event.currentTarget.password.value;
-    const user: string = event.currentTarget.user.value;
-    if(password && user){
-      appContext?.setUser(user);
-      appContext?.login(user);
+    const logedPassword: string = event.currentTarget.password.value;
+    const logedUser: string = event.currentTarget.user.value;
+    const loginUser = JSON.parse(localStorage.getItem('user') || "");
+    const {username, password} = loginUser;
+    if(logedPassword === password && logedUser.toLowerCase() === username.toLowerCase()){
+      appContext?.setUser(logedUser);
+      appContext?.login(logedUser);
       }
   }
 
@@ -35,6 +37,7 @@ const Login: React.FC<LoginProps> = () => {
             <input type="password" name="password" required/>
           </div>  
           <input type="submit" value='Login'/>  
+          <div ><Link to='/signup' className="signup">Sign up</Link></div>
          </form>;
 };
 

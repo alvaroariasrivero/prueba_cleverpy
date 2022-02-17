@@ -1,7 +1,6 @@
-// import { useEffect, useState} from 'react';
 import * as React from "react";
-import axios from 'axios';
 import {userContext} from '../../App';
+import axios from 'axios';
 import Card from '../Card';
 import './Home.scss';
 
@@ -17,6 +16,8 @@ interface Data{
 }
 
 const Home: React.FC<HomeProps> = () => {
+
+  const appContext = React.useContext(userContext);
 
   const[posts, setPosts] = React.useState([])
 
@@ -42,8 +43,10 @@ const Home: React.FC<HomeProps> = () => {
   }, [])
 
   const deletePost = (i: number) => {
+    if(appContext?.user){
     const cleanedPosts = posts.filter((post,j)=>j!==i)
-    setPosts(cleanedPosts);
+    setPosts(cleanedPosts)
+    };
   }
 
   const paintCards = () => {
