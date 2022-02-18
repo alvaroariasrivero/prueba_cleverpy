@@ -1,4 +1,5 @@
-import { useEffect, useState} from 'react';
+import * as React from "react";
+import {userContext} from '../../App';
 import axios from 'axios';
 import Card from '../Card';
 import './Home.scss';
@@ -16,9 +17,11 @@ interface Data{
 
 const Home: React.FC<HomeProps> = () => {
 
-  const[posts, setPosts] = useState([])
+  const appContext = React.useContext(userContext);
 
-  useEffect(() => {
+  const[posts, setPosts] = React.useState([])
+
+  React.useEffect(() => {
     async function fetchPost() {
       try {
         const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
@@ -40,10 +43,12 @@ const Home: React.FC<HomeProps> = () => {
   }, [])
 
   const deletePost = (i: number) => {
+    if(appContext?.user){
     const cleanedPosts = posts.filter((post,j)=>j!==i)
-    setPosts(cleanedPosts);
+    setPosts(cleanedPosts)
+    }
   }
-
+  
   const paintCards = () => {
     return posts.map((post, i) => <Card key={i} post={post} delete={()=>deletePost(i)}/>)
   }

@@ -38,6 +38,15 @@ label{
     width: 50%;
 }
 
+a.signup:link, a.signup:visited, a.signup:active {
+    text-decoration:none;
+    color: $color;
+}
+
+.incorrect{
+    color: red;
+}
+
 @media only screen and (max-width: 426px){
 
     form > div{
