@@ -43,7 +43,7 @@ const Login: React.FC<LoginProps> = () => {
           </div>  
           <input type="submit" value='Login'/>  
           <p className="incorrect">{credentials}</p>
-          <div ><Link to='/signup' className="signup">Sign up</Link></div>
+          <p className="account-msg">Still haven't an account? <Link to="/signup" className="signup"><b>Sign Up</b></Link></p>
          </form>;
 };
 
