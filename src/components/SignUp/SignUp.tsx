@@ -17,20 +17,20 @@ const SignUp: React.FC<SignUpProps> = () => {
     const user: string = event.currentTarget.user.value;
     const passwordRpt: string = event.currentTarget.passwordRpt.value;
     const checked: boolean = event.currentTarget.accept.checked
-    console.log(checked)
-    if(password.length < 6){
+    if(!user){
+      setMessage('Username must be completed')
+    } else if(password.length < 6){
       setMessage('Password must be at least six characters')
-    } if(!checked){
+    }else if(password !== passwordRpt){
+      setMessage('Passwords must match')
+    } else if(!checked){
       setMessage('Terms and conditios must be accepted')
     }else {
-      if(password === passwordRpt){
-          localStorage.setItem('user', JSON.stringify({
-            username: user,
-            password: password
-        }))
-        setSignUp(true)} else {
-          setMessage('Passwords must match')
-        }
+      localStorage.setItem('user', JSON.stringify({
+        username: user,
+        password: password
+    }))
+    setSignUp(true)
     }
   }
 
@@ -40,15 +40,15 @@ const SignUp: React.FC<SignUpProps> = () => {
   return <form onSubmit={handleSignUp}>
           <div>
             <label htmlFor="user">Username: </label>
-            <input type="text" name="user" required/>
+            <input type="text" name="user"/>
           </div>
           <div>
             <label htmlFor="password">Password: </label>
-            <input type="password" name="password" required/>
+            <input type="password" name="password" />
           </div>
           <div>
             <label htmlFor="passwordRpt">Repeat password: </label>
-            <input type="password" name="passwordRpt" required/>
+            <input type="password" name="passwordRpt" />
           </div>
           <div className="terms">
             <input type="checkbox" name='accept'/>
