@@ -21,8 +21,8 @@ const Login: React.FC<LoginProps> = () => {
     for(let i = 0; i < loginUser.length; i++){
       const {username, password} = loginUser[i];
       if(logedPassword === password && logedUser.toLowerCase() === username.toLowerCase()){
-        appContext?.setUser(logedUser);
-        appContext?.login(logedUser);
+        appContext?.setUser(username);
+        appContext?.login(username);
         appContext?.setLogged(true);
         } else {
           setCredentiasl('Incorrect username or password')
