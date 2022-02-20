@@ -26,10 +26,10 @@ const SignUp: React.FC<SignUpProps> = () => {
     } else if(!checked){
       setMessage('Terms and conditios must be accepted')
     }else {
-      localStorage.setItem('user', JSON.stringify({
-        username: user,
-        password: password
-    }))
+    let users = JSON.parse(localStorage.getItem("users") || "[]");
+    let signUser = {username: user, password: password};
+    users.push(signUser);
+    localStorage.setItem("users", JSON.stringify(users));
     setSignUp(true)
     }
   }
