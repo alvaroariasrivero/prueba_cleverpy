@@ -23,3 +23,15 @@ Create-react-component-folder
 Sass
 
 Axios
+
+## Installation
+
+Install dependencies and devdependencies
+```javascript
+npm i 
+```
+
+Start project in localhost:3000
+```javascript
+npm start
+```
