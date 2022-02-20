@@ -2,7 +2,7 @@
 
 [Visit the Web App](https://hungry-heyrovsky-6c778e.netlify.app/)
 
-## Frontend Typescript project:
+## Frontend TypeScript project:
 
 Code entirely in TypeScript.
 
