@@ -17,15 +17,17 @@ const Login: React.FC<LoginProps> = () => {
     event.preventDefault();
     const logedPassword: string = event.currentTarget.password.value;
     const logedUser: string = event.currentTarget.user.value;
-    const loginUser = JSON.parse(localStorage.getItem('user') || "");
-    const {username, password} = loginUser;
-    if(logedPassword === password && logedUser.toLowerCase() === username.toLowerCase()){
-      appContext?.setUser(logedUser);
-      appContext?.login(logedUser);
-      appContext?.setLogged(true);
-      } else {
-        setCredentiasl('Incorrect username or password')
-      }
+    const loginUser = JSON.parse(localStorage.getItem('users') || "");
+    for(let i = 0; i < loginUser.length; i++){
+      const {username, password} = loginUser[i];
+      if(logedPassword === password && logedUser.toLowerCase() === username.toLowerCase()){
+        appContext?.setUser(logedUser);
+        appContext?.login(logedUser);
+        appContext?.setLogged(true);
+        } else {
+          setCredentiasl('Incorrect username or password')
+        }
+    }
   }
 
   if(appContext?.user){
