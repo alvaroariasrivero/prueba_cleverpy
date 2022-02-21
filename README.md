@@ -1,6 +1,6 @@
 # Prueba técnica Cleverpy
 
-[Visit the Web App](https://hungry-heyrovsky-6c778e.netlify.app/)
+[Visit the Web App](https://hungry-heyrovsky-6c778e.netlify.app/) - Deployed on Netlify
 
 ## Frontend TypeScript project:
 
