@@ -1,10 +1,10 @@
 import * as React from "react";
-// import { shallow } from "enzyme";
-// import Footer from "./Footer";
+import { render, screen } from '@testing-library/react';
+import Footer from "./Footer";
 
-// describe("Footer", () => {
-//   test("matches snapshot", () => {
-//     const wrapper = shallow(<Footer />);
-//     expect(wrapper).toMatchSnapshot();
-//   });
-// });
+describe("Footer", () => {
+  test("matches snapshot", () => {
+    render(<Footer />);
+    expect(screen).toMatchSnapshot();
+  });
+});
