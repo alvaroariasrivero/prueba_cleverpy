@@ -4,15 +4,15 @@
 
 ## Frontend TypeScript project:
 
-Code entirely in TypeScript.
+Code entirely in TypeScript
 
-Typed without any types.
+Typed without any types
 
-Code in React.
+Code in React
 
-Functional Components.
+Functional Components
 
-Scss styles.
+Scss styles
 
 ## Libraries
 
