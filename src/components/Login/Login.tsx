@@ -3,11 +3,8 @@ import { Navigate, Link } from 'react-router-dom';
 import {userContext} from '../../App';
 import './Login.scss';
 
-type LoginProps = {
-  //
-};
 
-const Login: React.FC<LoginProps> = () => {
+const Login: React.FC = () => {
   
   const appContext = React.useContext(userContext);
 

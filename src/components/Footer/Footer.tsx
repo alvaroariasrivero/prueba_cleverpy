@@ -1,11 +1,7 @@
 import * as React from "react";
 import './Footer.scss';
 
-type FooterProps = {
-  //
-};
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
   return <footer>Made with love by Álvaro Arias Rivero</footer>;
 };
 

@@ -4,9 +4,6 @@ import axios from 'axios';
 import Card from '../Card';
 import './Home.scss';
 
-type HomeProps = {
-
-};
 
 interface Data{
   title: string,
@@ -15,7 +12,7 @@ interface Data{
   userId: number
 }
 
-const Home: React.FC<HomeProps> = () => {
+const Home: React.FC = () => {
 
   const appContext = React.useContext(userContext);
 

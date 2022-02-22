@@ -2,11 +2,7 @@ import * as React from "react";
 import { Navigate } from 'react-router-dom';
 import './SignUp.scss'
 
-type SignUpProps = {
-  //
-};
-
-const SignUp: React.FC<SignUpProps> = () => {
+const SignUp: React.FC = () => {
 
   const[message, setMessage] = React.useState('');
   const[signUp, setSignUp] = React.useState(false)
