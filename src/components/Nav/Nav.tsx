@@ -3,11 +3,7 @@ import {Link} from 'react-router-dom';
 import {userContext} from '../../App';
 import './Nav.scss';
 
-type NavProps = {
-  //
-};
-
-const Nav: React.FC<NavProps> = () => {
+const Nav: React.FC = () => {
 
   const appContext = React.useContext(userContext);
 

@@ -2,11 +2,7 @@ import * as React from "react";
 import Nav from '../Nav';
 import './Header.scss';
 
-type HeaderProps = {
-  //
-};
-
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC = () => {
   return <header><Nav/></header>;
 };
 

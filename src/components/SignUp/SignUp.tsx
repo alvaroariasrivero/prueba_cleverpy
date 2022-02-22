@@ -2,11 +2,7 @@ import * as React from "react";
 import { Navigate } from 'react-router-dom';
 import './SignUp.scss'
 
-type SignUpProps = {
-  //
-};
-
-const SignUp: React.FC<SignUpProps> = () => {
+const SignUp: React.FC = () => {
 
   const[message, setMessage] = React.useState('');
   const[signUp, setSignUp] = React.useState(false)
@@ -26,11 +22,11 @@ const SignUp: React.FC<SignUpProps> = () => {
     } else if(!checked){
       setMessage('Terms and conditios must be accepted')
     }else {
-    let users = JSON.parse(localStorage.getItem("users") || "[]");
-    let signUser = {username: user, password: password};
-    users.push(signUser);
-    localStorage.setItem("users", JSON.stringify(users));
-    setSignUp(true)
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+      let signUser = {username: user, password: password};
+      users.push(signUser);
+      localStorage.setItem("users", JSON.stringify(users));
+      setSignUp(true)
     }
   }
 

@@ -4,11 +4,7 @@ import Home from '../Home';
 import Login from '../Login'
 import SignUp from "../SignUp";
 
-type MainProps = {
-  //
-};
-
-const Main: React.FC<MainProps> = () => {
+const Main: React.FC = () => {
   return <main>
     <Routes>
       <Route path='/' element={<Home/>}/>
