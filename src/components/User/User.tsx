@@ -2,11 +2,8 @@ import * as React from "react";
 import {userContext} from '../../App';
 import './User.scss';
 
-export type UserProps = {
 
-};
-
-const User: React.FC<UserProps> = () => {
+const User: React.FC = () => {
 
   const appContext = React.useContext(userContext);
 

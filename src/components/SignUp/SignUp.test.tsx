@@ -1,10 +1,10 @@
 import * as React from "react";
-// import { shallow } from "enzyme";
-// import SingUp from "./SingUp";
+import { render, screen } from '@testing-library/react';
+import SingUp from "./SignUp";
 
-// describe("SingUp", () => {
-//   test("matches snapshot", () => {
-//     const wrapper = shallow(<SingUp />);
-//     expect(wrapper).toMatchSnapshot();
-//   });
-// });
+describe("SingUp", () => {
+  test("matches snapshot", () => {
+    render(<SingUp />);
+    expect(screen).toMatchSnapshot();
+  });
+});
