@@ -1,8 +1,8 @@
-import * as React from "react";
+import {FC} from "react";
 import Nav from '../Nav';
 import './Header.scss';
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   return <header><Nav/></header>;
 };
 

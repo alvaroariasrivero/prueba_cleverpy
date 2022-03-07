@@ -1,11 +1,11 @@
-import * as React from "react";
+import {FC, useContext} from "react";
 import {userContext} from '../../App';
 import './User.scss';
 
 
-const User: React.FC = () => {
+const User: FC = () => {
 
-  const appContext = React.useContext(userContext);
+  const appContext = useContext(userContext);
 
   if(appContext?.user){
     return <>

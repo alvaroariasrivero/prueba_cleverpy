@@ -1,11 +1,11 @@
-import * as React from "react";
+import {FC, useContext} from "react";
 import {Link} from 'react-router-dom';
 import {userContext} from '../../App';
 import './Nav.scss';
 
-const Nav: React.FC = () => {
+const Nav: FC = () => {
 
-  const appContext = React.useContext(userContext);
+  const appContext = useContext(userContext);
 
   if(appContext?.user){
     return <nav>

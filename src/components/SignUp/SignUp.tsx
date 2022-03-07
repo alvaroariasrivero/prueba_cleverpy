@@ -1,13 +1,13 @@
-import * as React from "react";
+import {FC, useState, FormEvent} from "react";
 import { Navigate } from 'react-router-dom';
 import './SignUp.scss'
 
-const SignUp: React.FC = () => {
+const SignUp: FC = () => {
 
-  const[message, setMessage] = React.useState('');
-  const[signUp, setSignUp] = React.useState(false)
+  const[message, setMessage] = useState('');
+  const[signUp, setSignUp] = useState(false)
 
-  const handleSignUp = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSignUp = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const password: string = event.currentTarget.password.value;
     const user: string = event.currentTarget.user.value;

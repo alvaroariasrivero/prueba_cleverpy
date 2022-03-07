@@ -1,4 +1,4 @@
-import * as React from "react";
+import {FC, useContext, useEffect, useState}from "react";
 import {userContext} from '../../App';
 import axios from 'axios';
 import Card from '../Card';
@@ -12,13 +12,13 @@ interface Data{
   userId: number
 }
 
-const Home: React.FC = () => {
+const Home: FC = () => {
 
-  const appContext = React.useContext(userContext);
+  const appContext = useContext(userContext);
 
-  const[posts, setPosts] = React.useState([])
+  const[posts, setPosts] = useState([])
 
-  React.useEffect(() => {
+  useEffect(() => {
     async function fetchPost() {
       try {
         const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
