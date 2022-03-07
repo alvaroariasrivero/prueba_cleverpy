@@ -1,4 +1,4 @@
-import * as React from "react";
+import {FC, useContext} from "react";
 import {userContext} from '../../App';
 import './Card.scss';
 
@@ -7,9 +7,9 @@ export type CardProps = {
   delete: (event: React.MouseEvent<HTMLButtonElement>) => void,
 };
 
-const Card: React.FC<CardProps> = (Props: CardProps) => {
+const Card: FC<CardProps> = (Props: CardProps) => {
 
-  const appContext = React.useContext(userContext);
+  const appContext = useContext(userContext);
 
   if(appContext?.logged === true){
       return <div className="card">

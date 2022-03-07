@@ -1,16 +1,16 @@
-import * as React from "react";
+import {FC, useContext, useState, FormEvent} from "react";
 import { Navigate, Link } from 'react-router-dom';
 import {userContext} from '../../App';
 import './Login.scss';
 
 
-const Login: React.FC = () => {
+const Login: FC = () => {
   
-  const appContext = React.useContext(userContext);
+  const appContext = useContext(userContext);
 
-  const[credentials, setCredentiasl] = React.useState('');
+  const[credentials, setCredentiasl] = useState('');
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const logedPassword: string = event.currentTarget.password.value;
     const logedUser: string = event.currentTarget.user.value;
